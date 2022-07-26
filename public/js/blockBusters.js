@@ -6,9 +6,12 @@ for (let i = 2; i <= 100; i++) {
     document.getElementById('blocks').appendChild(newDiv)
 }
 
-const blocks = document.getElementById('blocks')
+const blocks = document.getElementsByClassName('red-block')
 
-blocks.addEventListener('mouseover', deleteBlock) 
-function deleteBlock () {
-    
+for (const block of blocks) {
+    block.addEventListener('mouseover', deleteBlock) 
+}
+function deleteBlock (e) {
+        const block = e.target
+        block.remove();
 }
